@@ -5,10 +5,10 @@ Hello fellow ML enthusiasts and welcome to my first blog post, where I would lik
 
 An illustrative example of the STE would be an attempt to backpropagate through a step function which is defined as: 
 
-$$
+```math
     h(x) = \begin{cases} 1, & x > 0 \\
                              0, & x \leq 0 \end{cases}
-$$
+```
 For $h$, the gradient is everywhere except $x=0$ equal to zero and singular at $x=0$. To overcome this issue, Hinton proposes artifficially imposing a gradient function $\dot{h}$ in such cases. A pytorch example showcases this imposition concept, where we consider attempting a backward pass through a step function:
 ```python
 x = torch.tensor((10.0,)).float()
